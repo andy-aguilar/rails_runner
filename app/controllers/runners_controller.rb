@@ -8,6 +8,10 @@ class RunnersController < ApplicationController
     def show
     end
 
+    def new
+        @runner = Runner.new
+    end
+
     private
 
     def set_runner

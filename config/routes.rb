@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :runs, only: [:index, :show]
   resources :brands, only: [:index, :show]
   resources :shoes, only: [:index, :show]
-  resources :runners, only: [:index, :show]
+  resources :runners, only: [:index, :show, :new, :create]
   resources :runner_shoes, only: [:show]
 
   root "welcome#homepage"

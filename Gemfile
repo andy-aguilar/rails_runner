@@ -61,3 +61,5 @@ gem 'faker'
 gem 'bootstrap', '~> 4.5.0'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
+
+gem "bootstrap_form", "~> 4.0"
