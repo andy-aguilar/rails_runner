@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  runner_id: 1
+  shoe_id: 1
+  mileage: 1.5
+
+two:
+  runner_id: 1
+  shoe_id: 1
+  mileage: 1.5
