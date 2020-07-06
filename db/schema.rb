@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_150710) do
     t.datetime "date"
     t.integer "runner_id"
     t.integer "runner_shoe_id"
+    t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -7,6 +7,7 @@ class CreateRuns < ActiveRecord::Migration[6.0]
       t.datetime :date
       t.integer :runner_id
       t.integer :runner_shoe_id
+      t.string :location
 
       t.timestamps
     end

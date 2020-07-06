@@ -1,8 +1,19 @@
 <h1><%= @runner.name %></h1>
 
 <h2>Shoes:</h2>
-<ul>
-<% @runner.runner_shoes.each do |runner_shoe| %>
-<li><%= link_to runner_shoe.brand_with_name, runner_shoe_path(runner_shoe) %></li>
-<% end %>
-</ul>
+<div class="card-deck">
+    <% @runner.runner_shoes.each do |runner_shoe| %>
+        <div class="card" style="width: 18rem;">
+            <img src="https://www.famousfootwear.com/productimages/shoes_ib95364.jpg?trim.threshold=105&width=630&height=480&paddingWidth=60" class="card-img-top" alt="...">
+            <%= link_to runner_shoe.brand_with_name, runner_shoe_path(runner_shoe), class: "btn btn-dark" %>
+            <div class="card-body">
+                <p class="card-text">
+                    <ul>
+                        <li># of runs: <%= runner_shoe.runs.count %></li>
+                        <li>Miles ran: <%= runner_shoe.get_miles %></li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    <% end %>
+</div>

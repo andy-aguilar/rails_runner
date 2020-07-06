@@ -50,7 +50,8 @@ Runner.all.each do |runner|
             time: rand(0.0...21600.0).round(2),
             date: '2020-07-06',
             runner: runner,
-            runner_shoe: runner.runner_shoes.sample
+            runner_shoe: runner.runner_shoes.sample,
+            location: Faker::Address.city
         )
     end
 end

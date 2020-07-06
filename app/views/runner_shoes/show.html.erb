@@ -1,0 +1,14 @@
+<h1><%= @runner_shoe.brand_with_name %></h1>
+
+<h2>Stats</h2>
+<ul>
+    <li>Number of runs: <%= @runner_shoe.runs.count %></li>
+    <li>Total miles ran: <%= @runner_shoe.get_miles %></li>
+</ul>
+
+<h2>Runs</h2>
+<ul>
+    <% @runner_shoe.runs.each do |run| %>
+        <li><%= link_to run.run_location_and_date, run_path(run) %></li>
+    <% end %>
+</ul>
