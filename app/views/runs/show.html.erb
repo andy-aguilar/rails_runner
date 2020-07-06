@@ -1,0 +1,9 @@
+<h1><%= @run.run_location_and_date %></h1>
+
+<h2>Stats:</h2>
+<ul>
+<li><%= "Miles: #{@run.distance}" %></li>
+<li><%= "Time: #{@run.format_time}" %></li>
+<li><%= "Shoe: #{@run.runner_shoe.brand_with_name}" %></li>
+</ul>
+

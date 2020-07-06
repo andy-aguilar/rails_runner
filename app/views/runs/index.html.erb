@@ -1,7 +1,6 @@
 <h1>Runs:</h1>
 <ul>
 <% @runs.each do |run| %>
-<li><%= run.date %><br>
-    <%= run.distance %></li>
+<li><%= link_to run.run_location_and_date, run_path(run) %></li>
 <% end %>
 </ul>
