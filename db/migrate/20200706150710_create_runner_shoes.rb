@@ -3,7 +3,7 @@ class CreateRunnerShoes < ActiveRecord::Migration[6.0]
     create_table :runner_shoes do |t|
       t.integer :runner_id
       t.integer :shoe_id
-      t.float :mileage
+      t.float :mileage, default: 0
 
       t.timestamps
     end
