@@ -43,6 +43,7 @@ end
 Runner.all.each do |runner|
     runner.shoes << Shoe.all.sample(3)
     
+    # Creating 3 runs for each runner
     3.times do 
         Run.create(
             distance: rand(0.0...26.2).round(1),
