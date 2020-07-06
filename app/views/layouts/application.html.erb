@@ -10,12 +10,16 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand" href="/">Rails Runner</a>
+      <%= link_to "Runners", runners_path %>
+      <%= link_to "Shoes", shoes_path %>
+      <%= link_to "Brands", brands_path %>
+      <%= link_to "Runs", runs_path %>
       <form class="form-inline">
-        <button class="btn btn-outline-primary" type="button">Main button</button>
+        <button class="btn btn-outline-light" type="button">Sign Up</button>
         <div style="padding-left: 10px;">
-          <button class="btn btn-outline-success" type="button">Second button</button>
+          <button class="btn btn-outline-light" type="button">Login</button>
         </div>
       </form>
     </nav>

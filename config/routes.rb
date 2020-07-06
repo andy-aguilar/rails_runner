@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :runs, only: :index
-  resources :brands, only: :index
-  resources :shoes, only: :index
-  resources :runners, only: :index
+  resources :runs, only: [:index, :show]
+  resources :brands, only: [:index, :show]
+  resources :shoes, only: [:index, :show]
+  resources :runners, only: [:index, :show]
 
   root "welcome#homepage"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
