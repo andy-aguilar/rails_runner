@@ -12,9 +12,22 @@ class RunnersController < ApplicationController
         @runner = Runner.new
     end
 
+    def create
+        @runner = Runner.new(runner_params)
+        if @runner.save
+            redirect_to runner_path(@runner)
+        else
+            render :new
+        end
+    end
+
     private
 
     def set_runner
         @runner = Runner.find(params[:id])
+    end
+
+    def runner_params
+        params.require(:runner).permit(:name, :age, :height, :weight, :shoe_size)
     end
 end
