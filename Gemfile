@@ -55,3 +55,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'faker'
+
+
+# Bootstrap
+gem 'bootstrap', '~> 4.5.0'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'jquery-rails'
