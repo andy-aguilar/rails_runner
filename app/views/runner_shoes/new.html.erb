@@ -1,0 +1,7 @@
+<h1>Add a Shoe</h1>
+
+<%= bootstrap_form_for @runner_shoe do |f| %>
+<%= f.collection_select :runner_id, Runner.all, :id, :name, include_blank: ""%>
+<%= f.collection_select :shoe_id, Shoe.sorted_by_brand, :id, :brand_with_name, include_blank: "" %>
+<%= f.submit "Add Shoe" %>
+<% end %>

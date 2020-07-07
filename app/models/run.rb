@@ -6,6 +6,10 @@ class Run < ApplicationRecord
         return "#{self.location} -- #{self.date.strftime('%m/%d/%Y')}"
     end
 
+    def location_date_distance
+        return "#{self.location} -- #{self.distance} #{'mile'.pluralize(self.distance)} -- #{self.date.strftime('%m/%d')}"
+    end
+
     def format_time
         seconds = self.time % 60
         minutes = (self.time / 60) % 60

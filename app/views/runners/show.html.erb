@@ -1,6 +1,28 @@
 <h1><%= @runner.name %></h1>
+<h3><%= link_to "Add a Run", new_run_path(@runner) %></h3>
+<h3><%= link_to "Add a Shoe", new_runner_shoe_path %></h3>
+
+<h2>Stats:</h2>
+<ul>
+<li><%= "Runs: #{@runner.total_runs}" %></li>
+<li><%= "Total Miles: #{@runner.get_miles}" %>
+</ul>
+
+<h2>Runs</h2>
+<% if @runner.runs.empty? %>
+<p>You haven't added any runs yet. <%= link_to "Click here", new_run_path(@runner) %> to add a run.</p>
+<% end %>
+<ul>
+<% @runner.runs.each do |run| %>
+<li><%=link_to run.location_date_distance, run_path(run) %></li>
+<% end %>
+</ul>
 
 <h2>Shoes:</h2>
+<% if @runner.runner_shoes.empty? %>
+<p>You haven't added any shoes yet. <%=link_to "Click here", new_runner_shoe_path %> to add a pair.</p>
+<% end %>
+
 <div class="card-deck">
     <% @runner.runner_shoes.each do |runner_shoe| %>
         <div class="card" style="width: 18rem;">
@@ -10,7 +32,7 @@
                 <p class="card-text">
                     <ul>
                         <li># of runs: <%= runner_shoe.runs.count %></li>
-                        <li>Miles ran: <%= runner_shoe.get_miles %></li>
+                        <li>Miles run: <%= runner_shoe.get_miles %></li>
                     </ul>
                 </p>
             </div>
