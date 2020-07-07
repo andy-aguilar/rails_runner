@@ -1,5 +1,5 @@
 class RunnersController < ApplicationController
-    before_action :set_runner, only: [:show, :edit, :update]
+    before_action :set_runner, only: [:show, :edit, :update, :destroy]
     
     def index
         @runners = Runner.all
@@ -30,6 +30,11 @@ class RunnersController < ApplicationController
         else
             render 'edit'
         end
+    end
+
+    def destroy
+        @runner.destroy
+        redirect_to root_path
     end
 
     private

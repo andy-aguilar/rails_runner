@@ -40,3 +40,8 @@
         </div>
     <% end %>
 </div>
+
+<div>
+    <h5>Delete profile</h5>
+    <%= link_to 'Click here to delete profile', runner_path(@runner), method: :delete, data: {confirm: "Are you sure?" } %>
+</div>
