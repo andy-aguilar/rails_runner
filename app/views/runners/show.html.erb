@@ -1,6 +1,11 @@
 <h1><%= @runner.name %></h1>
-<h2><%= link_to "Add a Run", root_path %></h2>
-<h2><%= link_to "Add a Shoe", new_runner_shoe_path %>
+<h3><%= link_to "Add a Run", new_run_path(@runner) %></h3>
+<h3><%= link_to "Add a Shoe", new_runner_shoe_path %></h3>
+
+<h2>Stats:</h2>
+<ul>
+<li><%=  %>
+</ul>
 
 <h2>Shoes:</h2>
 <% if @runner.runner_shoes.empty? %>

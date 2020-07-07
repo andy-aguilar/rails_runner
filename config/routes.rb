@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :runs, only: [:index, :show]
+  resources :runs, only: [:index, :show, :create]
   resources :brands, only: [:index, :show]
   resources :shoes, only: [:index, :show]
   resources :runners, only: [:index, :show, :new, :create]
@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   root "welcome#homepage"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get "runs/new/:id", to: 'runs#new', as: 'new_run' 
 end
