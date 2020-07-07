@@ -2,14 +2,16 @@
 @import "bootstrap";
 @import "rails_bootstrap_forms";
 
-.navbar-dark .navbar .nav .nav-item .nav-link {
+.navbar-dark .navbar .nav .nav-item .nav-link, .footer-link {
     color: white;
 }
 
-.navbar-dark .navbar .nav .nav-item .nav-link:hover {
+.navbar-dark .navbar .nav .nav-item .nav-link:hover, .footer-link:hover {
     color: gray;
 }
 
-footer .footer-light {
+.footer-light {
+    margin-top: 25px;
     background-color: #343a40;
+    color: white !important;
 }
