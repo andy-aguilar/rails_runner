@@ -3,6 +3,9 @@ class RunnerShoe < ApplicationRecord
     belongs_to :shoe 
     has_many :runs
 
+    validates :runner, presence: true, length: { minimum: 2 }
+    validates :shoe, presence: true, length: { minimum: 2 }
+
     def brand_with_name
         return "#{self.shoe.brand.name} #{self.shoe.name}"
     end

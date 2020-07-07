@@ -6,4 +6,8 @@ class Shoe < ApplicationRecord
     def brand_with_name
         return "#{self.brand.name} #{self.name}"
     end
+
+    def self.sorted_by_brand
+        self.joins(:brand).merge(Brand.order(:name))
+    end
 end

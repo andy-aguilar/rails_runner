@@ -1,6 +1,12 @@
 <h1><%= @runner.name %></h1>
+<h2><%= link_to "Add a Run", root_path %></h2>
+<h2><%= link_to "Add a Shoe", new_runner_shoe_path %>
 
 <h2>Shoes:</h2>
+<% if @runner.runner_shoes.empty? %>
+<p>You haven't added any shoes yet. <%=link_to "Click here", new_runner_shoe_path %> to add a pair.</p>
+<% end %>
+
 <div class="card-deck">
     <% @runner.runner_shoes.each do |runner_shoe| %>
         <div class="card" style="width: 18rem;">
