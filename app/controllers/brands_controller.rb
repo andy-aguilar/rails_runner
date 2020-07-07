@@ -25,6 +25,11 @@ class BrandsController < ApplicationController
     end
 
     def update
+        if @brand.update(brand_params)
+            redirect_to brand_path(@brand)
+        else  
+            render :edit
+        end
     end
 
     def destroy
