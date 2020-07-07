@@ -2,6 +2,10 @@ class Run < ApplicationRecord
     belongs_to :runner
     belongs_to :runner_shoe
 
+    validates :date, presence: true
+    validates :distance, presence: true
+    validates :time, presence: true
+
     def run_location_and_date
         return "#{self.location} -- #{self.date.strftime('%m/%d/%Y')}"
     end
