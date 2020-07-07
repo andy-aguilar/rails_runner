@@ -1,3 +1,11 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 @import "rails_bootstrap_forms";
+
+.navbar-dark .navbar .nav .nav-item .nav-link {
+    color: white;
+}
+
+.navbar-dark .navbar .nav .nav-item .nav-link:hover {
+    color: gray;
+}

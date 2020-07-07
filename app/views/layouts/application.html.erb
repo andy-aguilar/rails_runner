@@ -13,10 +13,14 @@
     <header>
       <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="/">Rails Runner</a>
-        <%= link_to "Runners", runners_path %>
-        <%= link_to "Shoes", shoes_path %>
-        <%= link_to "Brands", brands_path %>
-        <%= link_to "Runs", runs_path %>
+        <div class="navbar navbar-default">
+          <ul class="nav">
+            <li class="nav-item"><%= link_to "Runners", runners_path, class: "nav-link" %><li>
+            <li class="nav-item"><%= link_to "Shoes", shoes_path, class: "nav-link" %><li>
+            <li class="nav-item"><%= link_to "Brands", brands_path, class: "nav-link" %><li>
+            <li class="nav-item"><%= link_to "Runs", runs_path, class: "nav-link" %><li>
+          </ul>
+        </div>
         <form class="form-inline">
           <a class="btn btn-outline-light" href=<%= new_runner_path %> role="button">Signup</a>
           <div style="padding-left: 10px;">
