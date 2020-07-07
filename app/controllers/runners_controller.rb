@@ -1,5 +1,5 @@
 class RunnersController < ApplicationController
-    before_action :set_runner, only: [:show]
+    before_action :set_runner, only: [:show, :edit, :update]
     
     def index
         @runners = Runner.all
@@ -18,6 +18,17 @@ class RunnersController < ApplicationController
             redirect_to runner_path(@runner)
         else
             render :new
+        end
+    end
+
+    def edit
+    end
+
+    def update
+        if @runner.update(runner_params)
+            redirect_to runner_path(@runner)
+        else
+            render 'edit'
         end
     end
 

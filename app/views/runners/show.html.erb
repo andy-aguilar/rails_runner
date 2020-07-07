@@ -1,4 +1,5 @@
 <h1><%= @runner.name %></h1>
+<h3><%= link_to "Edit profile", edit_runner_path(@runner) %></h3>
 <h3><%= link_to "Add a Run", new_run_path(@runner) %></h3>
 <h3><%= link_to "Add a Shoe", new_runner_shoe_path %></h3>
 
