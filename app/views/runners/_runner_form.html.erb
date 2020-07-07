@@ -1,5 +1,5 @@
 <%= bootstrap_form_for @runner do |f| %>
-<%= fields_for @user do |u| %>
+<%= fields_for :user_attributes do |u| %>
     <div class="form-group">
         <%= u.label :username, class: 'required' %>
         <%= u.text_field :username, class: 'form-control' %>
