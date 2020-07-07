@@ -1,5 +1,5 @@
 class RunsController < ApplicationController
-    before_action :set_run, only: [:show]
+    before_action :set_run, only: [:show, :destroy]
     
     def index
         @runs = Run.all
@@ -20,6 +20,12 @@ class RunsController < ApplicationController
         else 
             render :new
         end
+    end
+
+    def destroy
+        @runner = @run.runner
+        @run.destroy
+        redirect_to runner_path(@runner)
     end
 
     private
