@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_06_150710) do
+ActiveRecord::Schema.define(version: 2020_07_07_181714) do
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
@@ -55,6 +55,15 @@ ActiveRecord::Schema.define(version: 2020_07_06_150710) do
     t.integer "brand_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "profileable_type"
+    t.integer "profileable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profileable_type", "profileable_id"], name: "index_users_on_profileable_type_and_profileable_id"
   end
 
 end

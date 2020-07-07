@@ -1,0 +1,13 @@
+<h1>Sign Up Page</h1>
+
+<%= bootstrap_form_for @user, url: create_user_runner_path do |f| %>
+    <%= f.text_field :username %>
+    <%= f.fields_for :runner do |r| %>
+        <%= r.text_field :name %><br>
+        <%= r.number_field :age %><br>
+        <%= r.number_field :height %><br>
+        <%= r.number_field :weight %><br>
+        <%= r.number_field :shoe_size, min:1, step:0.5 %>
+    <% end %>
+    <%= f.submit %>
+<% end %>

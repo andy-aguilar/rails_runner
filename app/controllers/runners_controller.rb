@@ -11,10 +11,13 @@ class RunnersController < ApplicationController
     def new
         @runner = Runner.new
     end
-
+    
     def create
         @runner = Runner.new(runner_params)
-        if @runner.save
+        @user = @runner.build_user
+        @user.username = params[:username]
+        if @runner.save && @user.save
+            @runner.user.profileable = @runner
             redirect_to runner_path(@runner)
         else
             render :new
@@ -22,10 +25,13 @@ class RunnersController < ApplicationController
     end
 
     def edit
+        @user = @runner.user
     end
 
     def update
-        if @runner.update(runner_params)
+        @user = @runner.user
+        @user.username = params[:user][:username]
+        if @runner.update(runner_params) && @user.save
             redirect_to runner_path(@runner)
         else
             render 'edit'
@@ -44,6 +50,6 @@ class RunnersController < ApplicationController
     end
 
     def runner_params
-        params.require(:runner).permit(:name, :age, :height, :weight, :shoe_size)
+        params.require(:runner).permit(:name, :age, :height, :weight, :shoe_size, {runner_attributes: [:username]})
     end
 end

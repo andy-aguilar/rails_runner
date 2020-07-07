@@ -1,8 +1,14 @@
 <%= bootstrap_form_for @runner do |f| %>
-<%= f.text_field :name %><br>
-<%= f.number_field :age %><br>
-<%= f.number_field :height %><br>
-<%= f.number_field :weight %><br>
-<%= f.number_field :shoe_size, min:1, step:0.5 %><br>
+<%= fields_for @user do |u| %>
+    <div class="form-group">
+        <%= u.label :username, class: 'required' %>
+        <%= u.text_field :username, class: 'form-control' %>
+    </div>
+<% end %>
+<%= f.text_field :name %>
+<%= f.number_field :age %>
+<%= f.number_field :height %>
+<%= f.number_field :weight %>
+<%= f.collection_select :shoe_size, (5.0..14.0).step(0.5), :to_f, :to_f  %>
 <%= f.submit %>
 <% end %>
