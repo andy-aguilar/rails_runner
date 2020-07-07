@@ -8,3 +8,4 @@
 </ul>
 
 <h3><%= link_to "Edit Brand", edit_brand_path(@brand) %></h3>
+<%= link_to "Delete Brand", brand_path(@brand), method: :delete, data: { confirm: "Are you sure?"} %>

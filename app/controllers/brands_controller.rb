@@ -33,6 +33,8 @@ class BrandsController < ApplicationController
     end
 
     def destroy
+        @brand.destroy
+        redirect_to root_path
     end
     
 
