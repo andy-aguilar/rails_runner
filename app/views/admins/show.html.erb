@@ -1,0 +1,10 @@
+<h1>Welcome <%= @admin.name %>!</h1>
+<h3>Congrats on being an admin.</h3>
+<br>
+<br>
+<p>Enjoy all the power!</p>
+
+<div>
+    <h5>Delete profile</h5>
+    <%= link_to 'Click here to delete profile', admin_path(current_user.profileable.id), method: :delete, data: {confirm: "Are you sure?" } %>
+</div>
