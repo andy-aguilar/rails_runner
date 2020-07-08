@@ -2,8 +2,15 @@
 @import "bootstrap";
 @import "rails_bootstrap_forms";
 
+body {
+    background-image: url('/assets/home-page-background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .container {
-    min-height: 400px;
+    min-height: 500px;
 }
 
 .navbar-dark .navbar .nav .nav-item .nav-link, .footer-link {
