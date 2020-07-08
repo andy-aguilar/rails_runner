@@ -11,6 +11,7 @@ Brand.destroy_all
 Shoe.destroy_all
 Runner.destroy_all
 Run.destroy_all
+RunnerShoe.destroy_all
 
 # Creating brands
 5.times do
@@ -34,8 +35,6 @@ SHOE_SIZE = [7.5, 8.0, 8.5, 9.0, 9.5, 10.0, 10.5, 11.0, 11.5, 12.0, 12.5, 13.0]
     Runner.create(
         name: Faker::GreekPhilosophers.unique.name,
         age: rand(18...65),
-        height: rand(48...96),
-        weight: rand(100...300),
         shoe_size: SHOE_SIZE.sample
     )
 end

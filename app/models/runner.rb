@@ -7,8 +7,6 @@ class Runner < ApplicationRecord
 
     validates :name, presence: true
     validates :age, allow_nil: true, numericality: {only_integer: true, minimum: 1}
-    validates :height, allow_nil: true, numericality: {only_integer: true, minimum: 1}
-    validates :weight, allow_nil: true, numericality: {only_integer: true, minimum: 1}
     validate :validates_shoe_size
 
     def get_miles
