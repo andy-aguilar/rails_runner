@@ -12,7 +12,7 @@ class RunnerShoesController < ApplicationController
     def create
         @runner_shoe = RunnerShoe.new(runner_shoe_params)
         if @runner_shoe.save
-            redirect_to runner_shoe_path(@runner_shoe)
+            redirect_to runner_path(@runner_shoe.runner)
         else
             render :new
         end
