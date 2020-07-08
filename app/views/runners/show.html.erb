@@ -24,9 +24,9 @@
 <p>You haven't added any shoes yet. <%=link_to "Click here", new_runner_shoe_path %> to add a pair.</p>
 <% end %>
 
-<div class="card-deck">
+<div class="card-deck mx-auto">
     <% @runner.runner_shoes.each do |runner_shoe| %>
-        <div class="card" style="width: 18rem;">
+        <div class="card mx-auto" style="margin-bottom: 15px; margin-top: 15px; max-width: 15rem; min-width: 15rem">
             <img src="https://www.famousfootwear.com/productimages/shoes_ib95364.jpg?trim.threshold=105&width=630&height=480&paddingWidth=60" class="card-img-top" alt="...">
             <%= link_to runner_shoe.brand_with_name, runner_shoe_path(runner_shoe), class: "btn btn-dark" %>
             <div class="card-body">
