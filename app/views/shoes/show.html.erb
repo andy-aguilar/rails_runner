@@ -1,2 +1,14 @@
 <h1><%= @shoe.name %></h1>
 
+<h2>Picture</h2>
+
+<h2>Details</h2>
+<ul>
+    <li>Price: <%= @shoe.price %></li>
+    <li>Year: <%= @shoe.year %></li>
+</ul>
+
+<h2>Analytics</h2>
+
+<%= button_to "Edit Shoe", edit_shoe_path(@shoe), method: "get", class: 'btn btn-outline-dark' %>
+<%= button_to "Delete Shoe", shoe_path(@shoe), method: "delete", data: { confirm: "Are you sure?" }, class: 'btn btn-outline-dark' %>
