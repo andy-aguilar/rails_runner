@@ -1,11 +1,20 @@
 <h1>New Run</h1>
 
 <%= bootstrap_form_for @run do |f| %>
-<%= f.hidden_field :runner_id, :value => @runner.id%>
-<%= f.collection_select :runner_shoe_id, @runner.runner_shoes, :id, :brand_with_name, include_blank: "" %>
-<%= f.text_field :location %>
-<%= f.datetime_select :date, ampm: true %>
-<%= f.number_field :distance, step: 0.01%>
-<%= f.number_field :time %>
-<%= f.submit %>
+    <%= f.hidden_field :runner_id, :value => @runner.id%>
+    <%= f.collection_select :runner_shoe_id, @runner.runner_shoes, :id, :brand_with_name, include_blank: "" %>
+    <%= f.text_field :location %>
+    <%= f.datetime_select :date, ampm: true %>
+    <%= f.number_field :distance, step: 0.01%>
+    <%= fields_for :time_attributes do |t| %>
+        <%= t.label :time, "Time:" %>
+        <%= t.label :hours %>
+        <%= t.number_field :hours, step: 1 %>:
+        <%= t.label :minutes %>
+        <%= t.number_field :minutes, step:1 %>:
+        <%= t.label :seconds %>
+        <%= t.number_field :seconds, step:1 %>.
+        <%= t.number_field :hundreths, step:1 %><br>
+    <% end %>    
+    <%= f.submit "Add Run"%>
 <% end %>

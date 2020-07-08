@@ -21,4 +21,5 @@ class Run < ApplicationRecord
         # return "#{hours}:#{minutes}:#{seconds}"
         format("%02d:%02d:%02d", hours, minutes, seconds)
     end
+
 end

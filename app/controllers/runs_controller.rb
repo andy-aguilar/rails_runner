@@ -14,7 +14,9 @@ class RunsController < ApplicationController
     end
 
     def create
+        byebug
         @run = Run.new(run_params)
+        @run.time = time_converter(params[:time_attributes])
         if @run.save
             redirect_to run_path(@run)
         else 
