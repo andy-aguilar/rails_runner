@@ -12,3 +12,5 @@
         <li><%= link_to run.run_location_and_date, run_path(run) %></li>
     <% end %>
 </ul>
+
+<%= button_to "Delete Shoe", runner_shoe_path(@runner_shoe), method: "delete", data: { confirm: "Are you sure?" }, class: 'btn btn-outline-dark' %>

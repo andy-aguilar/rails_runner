@@ -1,6 +1,6 @@
 class RunnerShoesController < ApplicationController
 
-    before_action :set_runner_shoe, only: [:show]
+    before_action :set_runner_shoe, only: [:show, :destroy]
 
     def show
     end
@@ -16,6 +16,12 @@ class RunnerShoesController < ApplicationController
         else
             render :new
         end
+    end
+
+    def destroy
+        @runner = @runner_shoe.runner
+        @runner_shoe.destroy
+        redirect_to runner_path(@runner)
     end
 
     private
