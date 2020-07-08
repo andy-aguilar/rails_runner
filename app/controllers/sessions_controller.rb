@@ -12,6 +12,8 @@ class SessionsController < ApplicationController
                 redirect_to runner_path(user.profileable)
             elsif user.profileable_type == "Brand"
                 redirect_to brand_path(user.profileable)
+            elsif user.profileable_type == "Admin"
+                redirect_to admin_path(user.profileable)
             end
         else
             redirect_to login_path
