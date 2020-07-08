@@ -19,6 +19,7 @@ class RunnersController < ApplicationController
             @user.save
             @user.profileable = @runner
             @user.save
+            session[:user_id] = @user.id
             redirect_to runner_path(@runner)
         else
             render :new

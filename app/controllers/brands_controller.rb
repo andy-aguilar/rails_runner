@@ -19,6 +19,7 @@ class BrandsController < ApplicationController
             @user.save
             @user.profileable = @brand
             @user.save
+            session[:user_id] = @user.id
             redirect_to brand_path(@brand)
         else
             render :new
