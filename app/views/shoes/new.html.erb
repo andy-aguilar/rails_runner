@@ -1,0 +1,13 @@
+<h1>Add a shoe</h1>
+
+<%= bootstrap_form_for @shoe do |f| %>
+    <% if logged_in_admin? %>
+        <%= f.collection_select :brand_id, Brand.all, :id, :name %>
+    <% else %>
+        <%= f.hidden_field :brand_id, :value => current_user.profileable.id%>
+    <% end %>
+    <%= f.text_field :name %>
+    <%= f.number_field :price %>
+    <%= f.number_field :year %>
+    <%= f.submit %>
+<% end %>

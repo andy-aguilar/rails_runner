@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :runs
   resources :brands
-  resources :shoes, only: [:index, :show]
+  resources :shoes, only: [:index, :show, :new, :create]
   resources :runners
   resources :runner_shoes, only: [:show, :new, :create, :destroy]
 
