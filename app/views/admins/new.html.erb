@@ -1,0 +1,14 @@
+<%= bootstrap_form_for @admin do |f| %>
+    <%= fields_for :user_attributes do |u| %>
+        <div class="form-group">
+            <%= u.label :username, class: 'required' %>
+            <%= u.text_field :username, class: 'form-control' %>
+            <%= u.label :password, class: 'required' %>
+            <%= u.password_field :password, class: 'form-control' %>
+            <%= u.label 'Confirm password', class: 'required' %>
+            <%= u.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+    <% end %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+<% end %>

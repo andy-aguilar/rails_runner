@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :admins, only: [:show, :new, :create, :destroy]
   resources :runs
   resources :brands
   resources :shoes, only: [:index, :show, :new, :create]
