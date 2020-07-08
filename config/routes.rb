@@ -8,9 +8,6 @@ Rails.application.routes.draw do
   root "welcome#homepage"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get "runs/new/:id", to: 'runs#new', as: 'new_run' 
-
-  get 'user/runner/new', to: 'users#new_user_runner', as: 'new_user_runner'
-  post 'user/runner/create', to: 'users#create_user_runner', as: 'create_user_runner'
   
   get 'login', to: 'sessions#login'
   post 'login', to: 'sessions#process_login'
