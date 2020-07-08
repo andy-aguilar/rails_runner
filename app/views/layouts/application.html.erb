@@ -12,7 +12,7 @@
   <body class="<%= @homepage ? 'homepage' : ''%>">
     <header>
       <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="/"><%= image_tag("logo.png", size:'221x50') %></a>
+        <a class="navbar-brand" href="/"><%= image_tag("logo.png", size:'150x40') %></a>
         <form class="form-inline">
           <% if logged_in? %>
             <a class="btn btn-outline-light" href=<%= logout_path %> role="button">Logout</a>
@@ -63,8 +63,9 @@
         <!-- Grid column -->
         <div class="col-md-6 mt-md-0 mt-3">
           <!-- Content -->
-          <%= image_tag("logo.png", size:'444x100') %>
-          <p style="font-style: italic;">We may not know how to do things the right way, but we're pretty good at doing them the wrong way!</p>
+          <img src='/assets/logo-ed759e7e8e96637d799d8f80541a0354e5131652366a6e48f9f2ee6c22283f37.png' class='footer_logo'>
+          <%# <%= image_tag("logo.png")  %><br><br>
+          <p style="font-style: italic; width: 45%; text_align: justify">We may not know how to do things the right way, but we're pretty good at doing them the wrong way!</p>
         </div>
         <!-- Grid column -->
         <hr class="clearfix w-100 d-md-none pb-3">
