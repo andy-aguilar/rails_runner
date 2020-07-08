@@ -12,6 +12,7 @@ Shoe.destroy_all
 Runner.destroy_all
 Run.destroy_all
 RunnerShoe.destroy_all
+User.destroy_all
 
 # Creating brands
 5.times do

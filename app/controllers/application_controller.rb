@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
         total_seconds = (hr_secs + min_secs + secs + decimals)
         return total_seconds 
     end
+
+    def current_user
+        @current_user = User.find_by(id: session[:user_id])
+    end
     private
 
     # def runner_params(*args)

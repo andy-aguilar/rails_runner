@@ -11,4 +11,8 @@ Rails.application.routes.draw do
 
   get 'user/runner/new', to: 'users#new_user_runner', as: 'new_user_runner'
   post 'user/runner/create', to: 'users#create_user_runner', as: 'create_user_runner'
+  
+  get 'login', to: 'sessions#login'
+  post 'login', to: 'sessions#process_login'
+
 end

@@ -15,7 +15,6 @@ class RunnersController < ApplicationController
     def create
         @runner = Runner.new(runner_params)
         @user = User.new(user_params)
-        byebug
         if @user.valid? && @runner.valid?
             @user.save
             @user.profileable = @runner
