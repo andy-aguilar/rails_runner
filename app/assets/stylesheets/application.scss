@@ -46,8 +46,12 @@ body.homepage {
     // flex-wrap: wrap;
     align-items: center;
     // justify-content: space-between;
-    // padding: 0rem 0rem;
+    padding: 0rem 0rem;
     width: 100%;
+}
+
+.secondary_navbar .navbar{
+    padding: 0rem;
 }
 
 .secondary_navbar a {

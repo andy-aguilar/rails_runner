@@ -37,14 +37,23 @@
     </header>
     <% if logged_in? %>
     <div class="secondary_navbar">
-      <nav class="navbar navbar-light bg-light">
         <% if logged_in_admin? %>
-          <div class="navbar navbar-default">
+          <div class="navbar navbar-light bg-light">
             <ul class="nav">
               <li class="nav-item"><%= link_to "Runners", runners_path, class: "nav-link" %><li>
               <li class="nav-item"><%= link_to "Shoes", shoes_path, class: "nav-link" %><li>
               <li class="nav-item"><%= link_to "Brands", brands_path, class: "nav-link" %><li>
               <li class="nav-item"><%= link_to "Runs", runs_path, class: "nav-link" %><li>
+            </ul>
+          </div>
+        <% end %>
+        <% if logged_in_runner? %>
+          <div class="navbar navbar-light bg-light">
+            <ul class="nav">
+              <li class="nav-item"><%= link_to "New Run", new_run_path, class: "nav-link" %><li>
+              <li class="nav-item"><%= link_to "Shoes", shoes_path, class: "nav-link" %><li>
+              <li class="nav-item"><%= link_to "Brands", brands_path, class: "nav-link" %><li>
+              <li class="nav-item"><%= link_to "Edit Profile", runs_path, class: "nav-link" %><li>
             </ul>
           </div>
         <% end %>
