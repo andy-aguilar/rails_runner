@@ -2,7 +2,7 @@
 @import "bootstrap";
 @import "rails_bootstrap_forms";
 
-body {
+body.homepage {
     background-image: url('/assets/home-page-background.jpg');
     background-position: center;
     background-repeat: no-repeat;

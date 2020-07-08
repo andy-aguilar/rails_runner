@@ -9,7 +9,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= @homepage ? 'homepage' : ''%>">
     <header>
       <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="/"><%= image_tag("logo.png", size:'221x50') %></a>
