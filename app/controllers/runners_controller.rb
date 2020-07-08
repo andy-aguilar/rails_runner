@@ -41,6 +41,7 @@ class RunnersController < ApplicationController
     end
 
     def destroy
+        @runner.user.destroy
         @runner.destroy
         redirect_to root_path
     end
