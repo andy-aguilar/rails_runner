@@ -14,9 +14,13 @@ class BrandsController < ApplicationController
 
     def create
         @brand = Brand.new(brand_params)
-        if @brand.save
+        @user = User.new(user_params)
+        if @user.valid? && @brand.valid?
+            @user.save
+            @user.profileable = @brand
+            @user.save
             redirect_to brand_path(@brand)
-        else  
+        else
             render :new
         end
     end
@@ -39,6 +43,10 @@ class BrandsController < ApplicationController
     
 
     private
+
+    def user_params
+        params.require(:user_attributes).permit(:username, :password, :password_confirmation)
+    end
 
     def brand_params
         params.require(:brand).permit(:name)
