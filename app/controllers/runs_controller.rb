@@ -1,5 +1,5 @@
 class RunsController < ApplicationController
-    before_action :set_run, only: [:show, :destroy]
+    before_action :set_run, only: [:show, :edit, :update, :destroy]
     
     def index
         @runs = Run.all
@@ -15,11 +15,21 @@ class RunsController < ApplicationController
     def create
         @run = Run.new(run_params)
         @run.time = time_converter(params[:time_attributes])
-        byebug
         if @run.save
             redirect_to run_path(@run)
         else 
             render :new
+        end
+    end
+
+    def edit
+    end
+
+    def update
+        if @run.update(run_params)
+            redirect_to run_path(@run)
+        else
+            render :edit
         end
     end
 
