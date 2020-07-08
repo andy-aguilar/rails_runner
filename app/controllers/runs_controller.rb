@@ -9,13 +9,13 @@ class RunsController < ApplicationController
     end
 
     def new
-        @runner = Runner.find(params[:id])
         @run = Run.new
     end
 
     def create
         @run = Run.new(run_params)
         @run.time = time_converter(params[:time_attributes])
+        byebug
         if @run.save
             redirect_to run_path(@run)
         else 

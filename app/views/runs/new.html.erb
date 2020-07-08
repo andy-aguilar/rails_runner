@@ -1,8 +1,12 @@
 <h1>New Run</h1>
 
 <%= bootstrap_form_for @run do |f| %>
-    <%= f.hidden_field :runner_id, :value => @runner.id%>
-    <%= f.collection_select :runner_shoe_id, @runner.runner_shoes, :id, :brand_with_name, include_blank: "" %>
+    <% if logged_in_admin? %>
+        <%= f.collection_select :runner_id, Runner.all, :id, :name %>
+    <% else %>
+        <%= f.hidden_field :runner_id, :value => current_user.profileable.id%>
+    <% end %>
+    <%= f.collection_select :runner_shoe_id, current_user.profileable.runner_shoes, :id, :brand_with_name, include_blank: "" %>
     <%= f.text_field :location %>
     <%= f.datetime_select :date, ampm: true %>
     <%= f.number_field :distance, step: 0.01%>
