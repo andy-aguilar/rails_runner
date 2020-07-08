@@ -1,5 +1,5 @@
 class RunsController < ApplicationController
-    before_action :set_run, only: [:show, :destroy]
+    before_action :set_run, only: [:show, :edit, :update, :destroy]
     
     def index
         @runs = Run.all
@@ -9,7 +9,6 @@ class RunsController < ApplicationController
     end
 
     def new
-        @runner = Runner.find(params[:id])
         @run = Run.new
     end
 
@@ -20,6 +19,17 @@ class RunsController < ApplicationController
             redirect_to run_path(@run)
         else 
             render :new
+        end
+    end
+
+    def edit
+    end
+
+    def update
+        if @run.update(run_params)
+            redirect_to run_path(@run)
+        else
+            render :edit
         end
     end
 
