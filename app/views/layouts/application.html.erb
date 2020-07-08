@@ -13,7 +13,7 @@
     <header>
       <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="/"><%= image_tag("logo.png", size:'221x50') %></a>
-        <!-- if logged_in_admin? -->
+        <!-- if logged_in_admin? 
           <div class="navbar navbar-default">
             <ul class="nav">
               <li class="nav-item"><%= link_to "Runners", runners_path, class: "nav-link" %><li>
@@ -22,7 +22,7 @@
               <li class="nav-item"><%= link_to "Runs", runs_path, class: "nav-link" %><li>
             </ul>
           </div>
-        <!-- end -->
+        end -->
         <form class="form-inline">
           <% if logged_in? %>
             <a class="btn btn-outline-light" href=<%= logout_path %> role="button">Logout</a>
@@ -35,6 +35,22 @@
         </form>
       </nav>
     </header>
+    <% if logged_in? %>
+    <div class="secondary_navbar">
+      <nav class="navbar navbar-light bg-light">
+        <% if logged_in_admin? %>
+          <div class="navbar navbar-default">
+            <ul class="nav">
+              <li class="nav-item"><%= link_to "Runners", runners_path, class: "nav-link" %><li>
+              <li class="nav-item"><%= link_to "Shoes", shoes_path, class: "nav-link" %><li>
+              <li class="nav-item"><%= link_to "Brands", brands_path, class: "nav-link" %><li>
+              <li class="nav-item"><%= link_to "Runs", runs_path, class: "nav-link" %><li>
+            </ul>
+          </div>
+        <% end %>
+      </nav>
+    </div>
+    <% end %>
     <div class="container">
       <%= yield %>
     </div>

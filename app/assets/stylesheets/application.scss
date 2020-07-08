@@ -39,3 +39,21 @@ body.homepage {
 .container a:hover {
     color: orange;
 }
+
+.secondary_navbar {
+    // position: relative;
+    // display: flex;
+    // flex-wrap: wrap;
+    align-items: center;
+    // justify-content: space-between;
+    // padding: 0rem 0rem;
+    width: 100%;
+}
+
+.secondary_navbar a {
+    color: gray;
+}
+
+.secondary_navbar a:hover {
+    color: orange;
+}
