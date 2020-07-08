@@ -17,4 +17,9 @@ class SessionsController < ApplicationController
             redirect_to login_path
         end    
     end
+
+    def logout
+        session.clear
+        redirect_to root_path
+    end
 end

@@ -2,6 +2,9 @@ class ApplicationController < ActionController::Base
     helper_method :current_user
     helper_method :logged_in?
     helper_method :authorized
+    helper_method :logged_in_admin?
+    helper_method :logged_in_brand?
+    helper_method :logged_in_runner?
 
     def time_converter(time_params)
         hr_secs = time_params["hours"].to_i * 3600
@@ -17,10 +20,22 @@ class ApplicationController < ActionController::Base
     end
 
     def logged_in?
-        !!@current_user
+        !!current_user
     end
 
     def authorized
         redirect_to login_path unless logged_in?
+    end
+
+    def logged_in_runner?
+        logged_in? && @current_user.is_runner?
+    end
+
+    def logged_in_brand?
+        logged_in? && @current_user.is_brand?
+    end
+
+    def logged_in_admin?
+        logged_in? && @current_user.is_admin?
     end
 end

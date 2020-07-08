@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   
   get 'login', to: 'sessions#login'
   post 'login', to: 'sessions#process_login'
+  get 'logout', to: 'sessions#logout'
 
 end
