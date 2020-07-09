@@ -10,6 +10,13 @@
 </ul>
 
 <h2>Analytics</h2>
+<ul>
+    <li>Number of runners with this shoe: <%= @shoe.runners.count %></li>
+    <li>Total number of runs: <%= @shoe.total_runs %></li>
+    <li>Total miles ran: <%= @shoe.total_miles %></li>
+    <li>Average miles ran per run: <%= @shoe.average_miles_ran_per_run %></li>
+    <li>Average miles ran per runner: <%= @shoe.average_miles_ran_per_runner %></li>
+</ul>
 
 <%= button_to "Edit Shoe", edit_shoe_path(@shoe), method: "get", class: 'btn btn-outline-dark' %>
 <%= button_to "Delete Shoe", shoe_path(@shoe), method: "delete", data: { confirm: "Are you sure?" }, class: 'btn btn-outline-dark' %>

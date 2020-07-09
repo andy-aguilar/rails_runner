@@ -12,4 +12,29 @@ class Shoe < ApplicationRecord
     def self.sorted_by_brand
         self.joins(:brand).merge(Brand.order(:name))
     end
+
+    def self.get_all_runs(shoe_id)
+        self.select(:'shoes.id', :'runs.runner_id', :'runs.distance').joins(runner_shoes: :runs).where(id: shoe_id)
+    end
+
+    def total_runs
+        x = Shoe.get_all_runs(self.id).map do |run| 
+            run.runner_id
+        end.count
+    end
+
+    def total_miles
+        Shoe.get_all_runs(self.id).map do |run| 
+            run.distance
+        end.sum
+    end
+
+    def average_miles_ran_per_run
+        return (self.total_miles / self.total_runs).round(2)
+    end
+
+    def average_miles_ran_per_runner
+        (self.total_miles / self.runners.count).round(2)
+    end
+
 end
