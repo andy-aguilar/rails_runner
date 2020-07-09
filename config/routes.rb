@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   root "welcome#homepage"
   get 'terms-and-conditions', to: 'welcome#terms'
+  get 'privacy-policy', to: 'welcome#privacy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
   get 'login', to: 'sessions#login'

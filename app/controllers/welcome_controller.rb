@@ -5,4 +5,7 @@ class WelcomeController < ApplicationController
 
     def terms
     end
+
+    def policy
+    end
 end
