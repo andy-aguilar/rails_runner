@@ -19,6 +19,10 @@ class Runner < ApplicationRecord
         self.runs.count
     end
 
+    def sort_runs
+       self.runs.sort_by{|run|run.date}.reverse!
+    end
+
 
     private
 

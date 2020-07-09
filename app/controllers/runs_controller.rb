@@ -2,7 +2,7 @@ class RunsController < ApplicationController
     before_action :set_run, only: [:show, :edit, :update, :destroy]
     
     def index
-        @runs = Run.all
+        @runs = Run.order(date: :desc)
     end
 
     def show
