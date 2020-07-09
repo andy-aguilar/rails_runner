@@ -35,13 +35,16 @@ BRAND_NAME.each do |brand_name|
 end
 
 # Creating shoes
-25.times do
-    Shoe.create(
+i = 1
+26.times do
+    shoe = Shoe.create(
         name: Faker::Science.unique.element, 
         price: rand(50.00...200.00).round(2), 
         year: rand(2015...2020), 
         brand: Brand.all.sample
     )
+    shoe.avatar.attach(io:File.open("/Users/andyaguilar/Flatiron/code/mod2/mod2_project/rails_runner/app/assets/images/#{i}.jpg"), filename: "#{shoe.name}.jpg")
+    i+=1
 end
 
 SHOE_SIZE = [7.5, 8.0, 8.5, 9.0, 9.5, 10.0, 10.5, 11.0, 11.5, 12.0, 12.5, 13.0]
