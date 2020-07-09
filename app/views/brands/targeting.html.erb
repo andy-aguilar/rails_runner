@@ -1,0 +1,8 @@
+<h1>Prime Ad Targets</h1>
+<br><br>
+<p>Each of these runners has run over 250 miles on one of your shoes. They are probably due for a new pair!</p>
+<ul>
+<% current_user.profileable.due_for_new_pair?.each do |runner| %>
+<li><%= runner.name  %></li>
+<% end %>
+</ul>

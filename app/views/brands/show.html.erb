@@ -1,6 +1,4 @@
 <h1><%= @brand.name %></h1>
-<h3><%= link_to "Edit profile", edit_brand_path(@brand) %></h3>
-<h3><%= link_to "Add a Shoe", new_shoe_path %></h3>
 
 <h2>Shoes:</h2>
 <ul>
@@ -9,5 +7,5 @@
 <% end %>
 </ul>
 
-<h3><%= link_to "Edit Brand", edit_brand_path(@brand) %></h3>
+
 <%= link_to "Delete Brand", brand_path(@brand), method: :delete, data: { confirm: "Are you sure?"} %>

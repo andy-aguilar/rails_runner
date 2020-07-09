@@ -2,7 +2,8 @@ class User < ApplicationRecord
     has_secure_password
     belongs_to :profileable, polymorphic: true, optional: true
     validates :username, presence: true, uniqueness: true
-
+    
+    # POLYMORPHIC TYPE TESTS 
     def is_runner?
         self.profileable_type == 'Runner'
     end
@@ -14,4 +15,6 @@ class User < ApplicationRecord
     def is_admin?
         self.profileable_type == 'Admin'
     end
+
+
 end

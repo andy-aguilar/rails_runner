@@ -51,6 +51,18 @@
             </ul>
           </div>
         <% end %>
+        <% if logged_in_brand? %>
+          <div class="navbar navbar-light bg-light">
+            <ul class="nav">
+              <li class="nav-item"><%= link_to current_user.profileable.name, brand_path(current_user.profileable.id), class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to "New Shoe", new_shoe_path, class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to "Targeting", targeting_path(current_user.profileable.id), class: "nav-link" %></li>
+              <% if controller_name == "brands" && action_name == "show" %>
+                <li class="nav-item"><%= link_to "Edit Profile", edit_brand_path(current_user.profileable.id), class: "nav-link" %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
     </div>
     <% end %>
     <div class="container">

@@ -1,5 +1,5 @@
 class BrandsController < ApplicationController
-    before_action :set_brand, only: [:show, :edit, :update, :destroy]
+    before_action :set_brand, only: [:show, :edit, :update, :destroy, :new_pair_targets]
     
     def index
         @brands = Brand.all
@@ -41,6 +41,10 @@ class BrandsController < ApplicationController
         @brand.user.destroy
         @brand.destroy
         redirect_to root_path
+    end
+
+    def targeting
+        
     end
     
 
