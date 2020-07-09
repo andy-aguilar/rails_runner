@@ -30,11 +30,19 @@ class Shoe < ApplicationRecord
     end
 
     def average_miles_ran_per_run
-        return (self.total_miles / self.total_runs).round(2)
+        if self.total_runs > 0
+            (self.total_miles / self.total_runs).round(2)
+        else
+            return 0
+        end
     end
 
     def average_miles_ran_per_runner
-        (self.total_miles / self.runners.count).round(2)
+        if self.total_runs > 0
+            return (self.total_miles / self.runners.count).round(2)
+        else 
+            return 0
+        end
     end
 
 end
