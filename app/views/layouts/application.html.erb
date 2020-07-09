@@ -76,7 +76,7 @@
           <h5 class="text-uppercase">Brands</h5>
           <ul class="list-unstyled">
             <li><%= link_to 'Add your brand', new_brand_path, class: 'footer-link' %></li>
-            <li><a href="#!" class="footer-link">Support</a></li>
+            <li><%= link_to 'Support', support_path, class: 'footer-link' %></li>
             <li><%= link_to "Terms and conditions", terms_and_conditions_path, class: 'footer-link' %></li>
             <li><%= link_to "Privacy Policy", privacy_policy_path, class: 'footer-link' %></li>
           </ul>
@@ -87,9 +87,9 @@
           <!-- Links -->
           <h5 class="text-uppercase">Users</h5>
           <ul class="list-unstyled">
-          <li><a href="#!" class="footer-link">About us</a></li>
+          <li><%= link_to 'About Us', about_us_path, class: "footer-link" %></li>
           <li><a href="#!" class="footer-link">What is Rails Runner?</a></li>
-          <li><a href="#!" class="footer-link">Features</a></li>
+          <li><%= link_to 'Features', features_path, class: "footer-link" %></li>
           <li><a href="#!" class="footer-link">Contact Us</a></li>
         </ul>
       </div>

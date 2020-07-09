@@ -8,4 +8,13 @@ class WelcomeController < ApplicationController
 
     def policy
     end
+
+    def support
+    end
+
+    def about
+    end
+
+    def features
+    end
 end
