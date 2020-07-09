@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :runner_shoes, only: [:show, :new, :create, :destroy]
 
   root "welcome#homepage"
+  get 'terms-and-conditions', to: 'welcome#terms'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
   get 'login', to: 'sessions#login'
