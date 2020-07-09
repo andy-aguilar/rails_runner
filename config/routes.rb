@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'support', to: 'welcome#support'
   get 'about-us', to: 'welcome#about'
   get 'features', to: 'welcome#features'
+  get 'contact-us', to: 'welcome#contact'
+  get 'what-is-rails-runner', to: 'welcome#whatis'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
   get 'login', to: 'sessions#login'
