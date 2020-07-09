@@ -40,7 +40,9 @@
         <% if logged_in_runner? %>
           <div class="navbar navbar-light bg-light">
             <ul class="nav">
-              <li class="nav-item"><%= link_to "Profile", runner_path(current_user.profileable.id), class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to current_user.profileable.name, runner_path(current_user.profileable.id), class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to "My Runs", my_runs_path(current_user.profileable.id), class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to "My Shoes", my_shoes_path(current_user.profileable.id), class: "nav-link" %></li>
               <li class="nav-item"><%= link_to "New Run", new_run_path, class: "nav-link" %></li>
               <li class="nav-item"><%= link_to "New Shoes", new_runner_shoe_path, class: "nav-link" %></li>
               <% if controller_name == "runners" && action_name == "show" %>

@@ -1,0 +1,7 @@
+<h1><%= "#{@runner.name}'s Runs:" %></h1>
+
+<ul>
+<% @runner.runs.each do |run| %>
+<li><%=link_to run.location_date_distance, run_path(run) %></li>
+<% end %>
+</ul>

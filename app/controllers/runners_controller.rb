@@ -1,11 +1,18 @@
 class RunnersController < ApplicationController
-    before_action :set_runner, only: [:show, :edit, :update, :destroy]
+    before_action :set_runner, only: [:show, :edit, :update, :destroy, :my_runs, :my_shoes]
     
     def index
         @runners = Runner.all
     end
 
     def show
+    end
+
+    def my_runs
+        
+    end
+
+    def my_shoes
     end
 
     def new

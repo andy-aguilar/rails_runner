@@ -1,8 +1,4 @@
-<h1><%= @runner.name %></h1>
-
-<h3><%= link_to "Edit profile", edit_runner_path(@runner) %></h3>
-<h3><%= link_to "Add a Run", new_run_path(@runner) %></h3>
-<h3><%= link_to "Add a Shoe", new_runner_shoe_path %></h3>
+<h1>Your Profile</h1>
 
 <h2>Stats:</h2>
 <ul>
@@ -10,12 +6,12 @@
 <li><%= "Total Miles: #{@runner.get_miles}" %>
 </ul>
 
-<h2>Runs</h2>
+<h2><%= link_to "Runs:", my_runs_path(@runner)%></h2>
 <% if @runner.runs.empty? %>
 <p>You haven't added any runs yet. <%= link_to "Click here", new_run_path(@runner) %> to add a run.</p>
 <% end %>
 <ul>
-<% @runner.runs.each do |run| %>
+<% @runner.runs.first(5).each do |run| %>
 <li><%=link_to run.location_date_distance, run_path(run) %></li>
 <% end %>
 </ul>
@@ -25,22 +21,7 @@
 <p>You haven't added any shoes yet. <%=link_to "Click here", new_runner_shoe_path %> to add a pair.</p>
 <% end %>
 
-<div class="card-deck mx-auto">
-    <% @runner.runner_shoes.each do |runner_shoe| %>
-        <div class="card mx-auto" style="margin-bottom: 15px; margin-top: 15px; max-width: 15rem; min-width: 15rem">
-            <img src="https://www.famousfootwear.com/productimages/shoes_ib95364.jpg?trim.threshold=105&width=630&height=480&paddingWidth=60" class="card-img-top" alt="...">
-            <%= link_to runner_shoe.brand_with_name, runner_shoe_path(runner_shoe), class: "btn btn-dark" %>
-            <div class="card-body">
-                <p class="card-text">
-                    <ul>
-                        <li># of runs: <%= runner_shoe.runs.count %></li>
-                        <li>Miles run: <%= runner_shoe.get_miles %></li>
-                    </ul>
-                </p>
-            </div>
-        </div>
-    <% end %>
-</div>
+<%= render partial: 'shoe_deck' %>
 
 <div>
     <h5>Delete profile</h5>

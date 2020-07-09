@@ -1,0 +1,16 @@
+<div class="card-deck mx-auto">
+    <% @runner.runner_shoes.each do |runner_shoe| %>
+        <div class="card mx-auto" style="margin-bottom: 15px; margin-top: 15px; max-width: 15rem; min-width: 15rem">
+            <img src="https://www.famousfootwear.com/productimages/shoes_ib95364.jpg?trim.threshold=105&width=630&height=480&paddingWidth=60" class="card-img-top" alt="...">
+            <%= link_to runner_shoe.brand_with_name, runner_shoe_path(runner_shoe), class: "btn btn-dark" %>
+            <div class="card-body">
+                <p class="card-text">
+                    <ul>
+                        <li>Runs: <%= runner_shoe.runs.count %></li>
+                        <li>Miles: <%= runner_shoe.get_miles %></li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    <% end %>
+</div>
