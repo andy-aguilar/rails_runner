@@ -14,9 +14,24 @@ Run.destroy_all
 RunnerShoe.destroy_all
 User.destroy_all
 
+admin = Admin.create(
+    name: 'admin'
+)
+User.create(
+    username: 'admin',
+    password: 'password',
+    profileable: admin
+)
+
 # Creating brands
-5.times do
-    Brand.create(name: Faker::Esport.unique.player)
+BRAND_NAME = ['Nike', 'Asics', 'Adidas', 'New Balance', 'Puma', 'Reebok']
+BRAND_NAME.each do |brand_name|
+    brand = Brand.create(name: brand_name)
+    User.create(
+        username: brand_name.downcase.gsub(' ',''),
+        password: 'password',
+        profileable: brand
+    )
 end
 
 # Creating shoes
@@ -32,23 +47,25 @@ end
 SHOE_SIZE = [7.5, 8.0, 8.5, 9.0, 9.5, 10.0, 10.5, 11.0, 11.5, 12.0, 12.5, 13.0]
 
 # Create runners
-10.times do
-    Runner.create(
-        name: Faker::GreekPhilosophers.unique.name,
+50.times do
+    runner = Runner.create(
+        name: Faker::Name.name,
         age: rand(18...65),
         shoe_size: SHOE_SIZE.sample
     )
-end
+    User.create(
+        username: "#{runner.name.gsub(' ','').downcase}#{rand(1..500)}",
+        password: 'password',
+        profileable: runner
+    )
 
-Runner.all.each do |runner|
-    runner.shoes << Shoe.all.sample(3)
-    
-    # Creating 3 runs for each runner
-    3.times do 
+    runner.shoes << Shoe.all.sample(rand(1..6))
+
+    rand(0..30).times do 
         Run.create(
             distance: rand(0.0...26.2).round(1),
             time: rand(0.0...21600.0).round(2),
-            date: '2020-07-06',
+            date: Faker::Date.between(from: '2020-01-01', to: '2020-07-09'),
             runner: runner,
             runner_shoe: runner.runner_shoes.sample,
             location: Faker::Address.city

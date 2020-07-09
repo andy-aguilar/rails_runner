@@ -1,4 +1,6 @@
 class Shoe < ApplicationRecord
+    has_one_attached :avatar
+    
     belongs_to :brand
     has_many :runner_shoes
     has_many :runners, through: :runner_shoes

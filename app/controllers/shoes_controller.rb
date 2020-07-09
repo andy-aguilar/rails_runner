@@ -14,12 +14,7 @@ class ShoesController < ApplicationController
 
     def create
         @shoe = Shoe.new(shoe_params)
-        @shoe.image_url = params[:shoe][:image].original_filename
         if @shoe.save
-            byebug
-            File.open(Rails.root.join('app', 'assets', 'images', @shoe.image_url), 'wb') do |file|
-                file.write(@shoe.image_url.read)
-            end
             redirect_to shoe_path(@shoe)
         else
             render 'new'
@@ -46,7 +41,7 @@ class ShoesController < ApplicationController
     private
 
     def shoe_params
-        params.require(:shoe).permit(:brand_id, :name, :price, :year, :image)
+        params.require(:shoe).permit(:brand_id, :name, :price, :year, :avatar)
     end
 
     def set_shoe
