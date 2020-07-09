@@ -43,7 +43,7 @@ i = 1
         year: rand(2015...2020), 
         brand: Brand.all.sample
     )
-    shoe.avatar.attach(io:File.open("/Users/andyaguilar/Flatiron/code/mod2/mod2_project/rails_runner/app/assets/images/#{i}.jpg"), filename: "#{shoe.name}.jpg")
+    shoe.avatar.attach(io:File.open(Rails.root.join("app/assets/images/#{i}.jpg")), filename: "#{shoe.name}.jpg")
     i+=1
 end
 
