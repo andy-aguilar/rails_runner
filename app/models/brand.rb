@@ -17,4 +17,15 @@ class Brand < ApplicationRecord
         return runner_array.uniq
     end
 
+    def loyal_customers
+        loyal_customers = []
+        Runner.all.each do |runner|
+            brand_array = runner.shoes.map {|shoe| shoe.brand}
+            if brand_array.count(self) > 1
+                loyal_customers << runner
+            end
+        end
+        return loyal_customers
+    end
+
 end

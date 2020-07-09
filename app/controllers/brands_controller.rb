@@ -1,5 +1,5 @@
 class BrandsController < ApplicationController
-    before_action :set_brand, only: [:show, :edit, :update, :destroy, :new_pair_targets]
+    before_action :set_brand, only: [:show, :edit, :update, :destroy, :new_pair_targets, :loyal_customers]
     
     def index
         @brands = Brand.all
@@ -44,7 +44,9 @@ class BrandsController < ApplicationController
     end
 
     def targeting
-        
+    end
+
+    def loyal_customers 
     end
     
 

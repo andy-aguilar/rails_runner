@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   get 'runner/:id/my_runs', to: 'runners#my_runs', as: 'my_runs'
   get 'runner/:id/my_shoes', to: 'runners#my_shoes', as: 'my_shoes'
   get 'brand/:id/targeting', to: 'brands#targeting', as: 'targeting'
+  get 'brand/:id/loyal_customers', to: 'brands#loyal_customers', as: 'loyal'
 
 end
