@@ -1,0 +1,10 @@
+<h1>Your Loyal Customers</h1>
+
+<p>These users have two or more pairs of your shoes!</p>
+
+<ul>
+<% @brand.loyal_customers.each do |customer|  %>
+<li><%= customer.name %></li>
+<% end %>
+</ul>
+

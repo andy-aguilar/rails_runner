@@ -2,8 +2,10 @@
 <html>
   <head>
     <title>RailsRunner</title>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/ASCAhAd.png">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -47,6 +49,19 @@
               <li class="nav-item"><%= link_to "New Shoes", new_runner_shoe_path, class: "nav-link" %></li>
               <% if controller_name == "runners" && action_name == "show" %>
                 <li class="nav-item"><%= link_to "Edit Profile", edit_runner_path(current_user.profileable.id), class: "nav-link" %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <% if logged_in_brand? %>
+          <div class="navbar navbar-light bg-light">
+            <ul class="nav">
+              <li class="nav-item"><%= link_to current_user.profileable.name, brand_path(current_user.profileable.id), class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to "New Shoe", new_shoe_path, class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to "Targeting", targeting_path(current_user.profileable.id), class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to "Loyalty", loyal_path(current_user.profileable.id), class: "nav-link" %></li>
+              <% if controller_name == "brands" && action_name == "show" %>
+                <li class="nav-item"><%= link_to "Edit Profile", edit_brand_path(current_user.profileable.id), class: "nav-link" %></li>
               <% end %>
             </ul>
           </div>

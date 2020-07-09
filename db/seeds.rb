@@ -64,7 +64,7 @@ SHOE_SIZE = [7.5, 8.0, 8.5, 9.0, 9.5, 10.0, 10.5, 11.0, 11.5, 12.0, 12.5, 13.0]
 
     runner.shoes << Shoe.all.sample(rand(1..6))
 
-    rand(0..30).times do 
+    rand(30..200).times do 
         Run.create(
             distance: rand(0.0...26.2).round(1),
             time: rand(0.0...21600.0).round(2),
