@@ -17,6 +17,7 @@ body.homepage {
 .navbar {
     position: fixed;
     width: 100%;
+    z-index: 100;
 }
 
 .navbar-dark .navbar .nav .nav-item .nav-link, .footer-link {
@@ -54,6 +55,7 @@ body.homepage {
     padding: 0rem 0rem;
     width: 100%;
     top: 60px;
+    z-index: 100;
 }
 
 .secondary_navbar .navbar{
