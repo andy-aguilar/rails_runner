@@ -8,6 +8,15 @@ body.homepage {
     background-repeat: no-repeat;
     background-size: cover;
 }
+body.pages {
+    background-image: url('/assets/pages-background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
 
 .container {
     min-height: 550px;
@@ -41,7 +50,7 @@ body.homepage {
 }
 
 .container a {
-    color: gray;
+    color: grey;
 }
 
 .container a:hover {
