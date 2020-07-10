@@ -29,6 +29,8 @@ class RunnersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to runner_path(@runner)
         else
+            @runner.valid?
+            @errors = @runner.errors.full_messages.concat(@user.errors.full_messages)
             render :new
         end
     end
