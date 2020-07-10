@@ -9,14 +9,12 @@ body.homepage {
     background-size: cover;
 }
 body.pages {
-    background-image: url('/assets/pages-background.png');
-    background-position: center;
+    background: url('/assets/pages-background.png');
+    background-attachment: fixed;
+    background-position: top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% auto;
 }
-
-
-
 
 .container {
     min-height: 550px;
